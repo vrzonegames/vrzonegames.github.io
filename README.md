@@ -1,4 +1,3 @@
-![Untitled](https://user-images.githubusercontent.com/107637825/206650107-5b05f3aa-00a1-4f46-b7d5-cc5449be38fa.png)
 # vrzonegames
 
 
@@ -9,4 +8,3 @@ OreoClicker
 sprite cranberry Clicker
 
 <a href="https://vrzonegames.github.io/spritecranberryClicker/">![sprite](https://user-images.githubusercontent.com/107637825/206641459-918c0427-1a21-4097-8bff-89b438b47659.png) 
-
