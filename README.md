@@ -11,4 +11,4 @@ sprite cranberry Clicker
 
 smb3Clicker
 
-<a href="https://vrzonegames.github.io/spritecranberryClicker/">![mario](https://user-images.githubusercontent.com/107637825/206802167-0c178c17-fed6-4262-a89b-15d01eaf3753.png)
+<a href="https://vrzonegames.github.io/smb3Clicker/">![mario](https://user-images.githubusercontent.com/107637825/206802167-0c178c17-fed6-4262-a89b-15d01eaf3753.png)
