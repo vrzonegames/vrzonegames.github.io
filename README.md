@@ -1,3 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>vrzonegames</title>
+        <style>
+            body {
+                background: black;
+            }
+        </style>
+    </head>
+
 # vrzonegames
 
 
