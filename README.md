@@ -1,3 +1,3 @@
-# vrzonegames.github.io
+# vrzonegames
 
-<a href="https://vrzonegames.github.io/OreoClicker.com/">OreoClicker/</a>
+<a href="https://vrzonegames.github.io/OreoClicker.com/">OreoClicker</a>
