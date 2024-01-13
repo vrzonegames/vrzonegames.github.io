@@ -1,1 +1,379 @@
+<HTML>
 
+<head>
+    <title>Vrzone Games</title>
+
+    <style>
+        .sectionLeft {
+            float: left;
+            width: 80%;
+        }
+        
+        .sectionRigth {
+            float: right;
+            width: 20%;
+        }
+        
+        .scoreContainer {
+            background-color: rgb(238, 238, 238);
+            width: 50%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .clickerContainer img {
+            position: relative;
+            transition: all .2s ease-in-out;
+        }
+        
+        .clickerContainer img:hover {
+            transform: scale(1.10);
+        }
+        
+        .clickerContainer img:active {
+            transform: scale(0.99);
+        }
+        
+        .shopButton {
+            background-color: #b5b5b5;
+            transition: all .2s ease-in-out;
+            border-radius: 10px;
+            width: 20%;
+            margin: 10px 0px 10px 0px;
+        }
+        
+        .shopButton:hover {
+            background-color: #c7c7c7;
+            transition: all .2s ease-in-out;
+        }
+        
+        .shopButton #image {
+            width: 25%;
+        }
+        
+        .shopButton img {
+            height: 64px;
+            width: 64px;
+        }
+        
+        .shopButton #nameandcost p {
+            margin: 0px;
+            width: 60px;
+        }
+        
+        .shopButton p:first-of-type {
+            font-size: 24px;
+        }
+        
+        .shopButton #amount {
+            font-size: 48px;
+            color: #595959;
+            font-family: rodoto;
+            width: 15%;
+        }
+        
+        .sectionFooter {
+            margin-top: 20%;
+        }
+        
+        .unselectable {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            /* if not using a chromium browser */
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sectionLeft">
+        <center>
+            <div class="scoreContainer unselectable">
+                <span id="score">0</span> oreo<br>
+                <span id="scorepersecond">0</span> oreo per second
+            </div>
+            <br>
+            <div class="clickerContainer unselectable">
+                <img src="im/oero.png" onclick="addToScore(clickingpower)">
+            </div>
+            <button onclick="savegame();">Save Gmae</button>
+        </center>
+
+        <div class="sectionFooter">
+            <h5>Oreo Clicker</h5>
+            <button onclick="resetgame();">Reset Game</button>
+        </div>
+    </div>
+
+    <div class="sectionRight">
+        <table class="shopButton unselectable" onclick="buyCursor()">
+            <tr>
+                <td id="image"><img src="im/Cursorv4.png"></td>
+                <td id="nameAndCost">
+                    <p>Cursor</p>
+                    <P><span id="cursorcost">15</span> oreo</P>
+                </td>
+                <td id="amount"><span id="cursors">0</span></td>
+            </tr>
+        </table>
+        <table class="shopButton unselectable" onclick="buyGrandma()">
+            <tr>
+                <td id="image"><img src="im/Grandma.png"></td>
+                <td id="nameAndCost">
+                    <p>Grandma</p>
+                    <P><span id="Grandmacost">100</span> oero</P>
+                </td>
+                <td id="amount"><span id="Grandmas">0</span></td>
+            </tr>
+        </table>
+        <table class="shopButton unselectable" onclick="buyFarm()">
+            <tr>
+                <td id="image"><img src="im/farm.png"></td>
+                <td id="nameAndCost">
+                    <p>Farm</p>
+                    <P><span id="farmcost">400</span> oero</P>
+                </td>
+                <td id="amount"><span id="farms">0</span></td>
+            </tr>
+        </table>
+        <table class="shopButton unselectable" onclick="buyoven()">
+            <tr>
+                <td id="image"><img src="im/oven.png"></td>
+                <td id="nameAndCost">
+                    <p>oven</p>
+                    <P><span id="ovencost">1000</span> oero</P>
+                </td>
+                <td id="amount"><span id="ovens">0</span></td>
+            </tr>
+        </table>
+        <table class="shopButton unselectable" onclick="buyMine()">
+            <tr>
+                <td id="image"><img src="im/mine.png"></td>
+                <td id="nameAndCost">
+                    <p>Mine</p>
+                    <P><span id="minecost">2000</span> oero</P>
+                </td>
+                <td id="amount"><span id="mines">0</span></td>
+            </tr>
+        </table>
+        <table class="shopButton unselectable" onclick="buyFactory()">
+            <tr>
+                <td id="image"><img src="im/factory.png"></td>
+                <td id="nameAndCost">
+                    <p>Factory</p>
+                    <P><span id="factorycost">3000</span> oero</P>
+                </td>
+                <td id="amount"><span id="factorys">0</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var score = 0;
+        var clickingpower = 1;
+
+        var cursorCost = 15;
+        var cursors = 0;
+        var Grandmacost = 100;
+        var Grandmas = 0;
+        var farmcost = 400;
+        var farms = 0;
+        var ovencost = 1000;
+        var ovens = 0;
+        var mines = 0;
+        var minecost = 2000;
+        var factorys = 0;
+        var factorycost = 3000;
+
+        function buyCursor() {
+            if (score >= cursorCost) {
+                score = score - cursorCost;
+                cursors = cursors + 1;
+                cursorCost = Math.round(cursorCost * 1.15);
+
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("cursorcost").innerHTML = cursorCost;
+                document.getElementById("cursors").innerHTML = cursors;
+                updateScorepersecond();
+
+            }
+        }
+
+        function buyGrandma() {
+            if (score >= Grandmacost) {
+                score = score - Grandmacost;
+                Grandmas = Grandmas + 1;
+                Grandmacost = Math.round(Grandmacost * 1.15);
+
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("Grandmacost").innerHTML = Grandmacost;
+                document.getElementById("Grandmas").innerHTML = Grandmas;
+                updateScorepersecond();
+
+            }
+        }
+
+        function buyFarm() {
+            if (score >= farmcost) {
+                score = score - farmcost;
+                farms = farms + 1;
+                farmcost = Math.round(farmcost * 1.15);
+
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("farmcost").innerHTML = farmcost;
+                document.getElementById("farms").innerHTML = farms;
+                updateScorepersecond();
+
+            }
+        }
+
+        function buyoven() {
+            if (score >= ovencost) {
+                score = score - ovencost;
+                ovens = ovens + 1;
+                ovencost = Math.round(ovencost * 1.15);
+
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("ovencost").innerHTML = ovencost;
+                document.getElementById("ovens").innerHTML = ovens;
+                updateScorepersecond();
+
+            }
+        }
+
+        function buyMine() {
+            if (score >= minecost) {
+                score = score - minecost;
+                mines = mines + 1;
+                minecost = Math.round(minecost * 1.15);
+
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("minecost").innerHTML = minecost;
+                document.getElementById("mines").innerHTML = mines;
+                updateScorepersecond();
+
+            }
+        }
+
+        function buyFactory() {
+            if (score >= minecost) {
+                score = score - factorycost;
+                factorys = factorys + 1;
+                factorycost = Math.round(factorycost * 1.15);
+
+                document.getElementById("score").innerHTML = score;
+                document.getElementById("factorycost").innerHTML = factorycost;
+                document.getElementById("factorys").innerHTML = factorys;
+                updateScorepersecond();
+
+            }
+        }
+
+        function addToScore(amount) {
+            score = score + amount;
+            document.getElementById("score").innerHTML = score;
+        }
+
+        function updateScorepersecond() {
+            scorepersecond = cursors + Grandmas * 5 + ovens * 70 + farms * 20 + mines * 100 + factorys * 200;
+            document.getElementById("scorepersecond").innerHTML = scorepersecond;
+        }
+
+        function loadgame() {
+            var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+            if (typeof savedGame.score !== "undefined") score = savedGame.score;
+            if (typeof savedGame.clickingpower !== "undefined") clickingpower = savedGame.clickingpower;
+            if (typeof savedGame.cursorCost !== "undefined") cursorCost = savedGame.cursorCost;
+            if (typeof savedGame.cursors !== "undefined") cursors = savedGame.cursors;
+            if (typeof savedGame.Grandmacost !== "undefined") Grandmacost = savedGame.Grandmacost;
+            if (typeof savedGame.Grandmas !== "undefined") Grandmas = savedGame.Grandmas;
+            if (typeof savedGame.ovencost !== "undefined") ovencost = savedGame.ovencost;
+            if (typeof savedGame.ovens !== "undefined") ovens = savedGame.ovens;
+            if (typeof savedGame.farms !== "undefined") farms = savedGame.farms;
+            if (typeof savedGame.farmcost !== "undefined") farmcost = savedGame.farmcost;
+            if (typeof savedGame.minecost !== "undefined") minecost = savedGame.minecost;
+            if (typeof savedGame.mines !== "undefined") mines = savedGame.mines;
+            if (typeof savedGame.factorycost !== "undefined") factorycost = savedGame.factorycost;
+            if (typeof savedGame.factorys !== "undefined") factorys = savedGame.factorys;
+        }
+
+
+        function savegame() {
+            var gameSave = {
+                score: score,
+                clickingpower: clickingpower,
+                cursorCost: cursorCost,
+                cursors: cursors,
+                Grandmacost: Grandmacost,
+                Grandmas: Grandmas,
+                ovencost: ovencost,
+                ovens: ovens,
+                farmcost: farmcost,
+                farms: farms,
+                minecost: minecost,
+                mines: mines,
+                factorycost: factorycost,
+                factorys: factorys
+            };
+            localStorage.setItem("gameSave", JSON.stringify(gameSave));
+        }
+
+        function resetgame() {
+            if (confirm("Are you sure you want to reset your game")) {
+                var gameSave = {};
+                localStorage.setItem("gameSave", JSON.stringify(gameSave));
+                location.reload();
+            }
+        }
+
+
+
+
+
+        window.onload = function() {
+            loadgame();
+            updateScorepersecond();
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("cursorcost").innerHTML = cursorCost;
+            document.getElementById("cursors").innerHTML = cursors;
+            document.getElementById("Grandmacost").innerHTML = Grandmacost
+            document.getElementById("Grandmas").innerHTML = Grandmas;
+            document.getElementById("ovencost").innerHTML = ovencost;
+            document.getElementById("ovens").innerHTML = ovens;
+            document.getElementById("farmcost").innerHTML = farmcost;
+            document.getElementById("farms").innerHTML = farms;
+            document.getElementById("minecost").innerHTML = minecost;
+            document.getElementById("mines").innerHTML = mines;
+            document.getElementById("factorycost").innerHTML = factorycost;
+            document.getElementById("factorys").innerHTML = factorys;
+        };
+
+        setInterval(function() {
+            score = score + cursors;
+            score = score + Grandmas * 5;
+            score = score + ovens * 70;
+            score = score + farms * 20;
+            score = score + mines * 100;
+            score = score + factorys * 200;
+            document.getElementById("score").innerHTML = score;
+
+            document.title = score + " Oreo - Oreo Clicker";
+        }, 1000); // 1000ms = 1 second
+
+        setInterval(function() {
+            savegame();
+        }, 30000);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.which == 83) { // ctrl = s
+                event.preventDefault();
+                savegame();
+            }
+        }, false);
+    </script>
+</body>
+
+</HTML>
