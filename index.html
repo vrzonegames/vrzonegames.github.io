@@ -19,6 +19,14 @@
         .clickerContainer {
             transform: scale(0.99);
         }
+
+       .unselectable {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            /* if not using a chromium browser */
+            user-select: none;
+        }
        
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -38,7 +46,7 @@
     <div class="sectionLeft">
        <img src="https://i.imgur.com/uCq5MVg.gif" onclick="location.href='https://vrzonegames.github.io/OreoClicker'"
          
-    <div class="clickerContainer">
+    <div class="clickerContainer unselectable">
       <img src="https://i.imgur.com/Hjz5Hsw.png" onclick="location.href='https://vrzonegames.github.io/spritecranberryClicker'"
   </body>
 </html>
