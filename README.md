@@ -25,3 +25,7 @@ Fake YouTube Login
 
 <a href="https://vrzonegames.github.io/fakeyoutubelogin/">![Fake YouTube Login](https://i.imgur.com/SwidjoU.png))
 
+BeerClicker
+
+<a href="https://vrzonegames.github.io/BeerClicker/">https://vrzonegames.github.io/BeerClicker/im/Beer.png</a>
+
