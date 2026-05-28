@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="images/logo.png">
-<title>vrzoneGames — Home</title>
+<title>vrzoneGames — BioGEn</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -24,11 +24,13 @@
 <nav class="top-nav" id="topNav">
   <a href="#" class="nav-brand">vrzone<span>Games</span></a>
   <ul class="nav-links">
-    <li><a href="#">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="#features">About</a></li>
+    <li><a href="#pricing">Downloads</a></li>
+    <li><a href="https://github.com/vrzonegames/BioGEn">Github</a></li>
     <li><a href="Projects.html">Projects</a></li>
   </ul>
-  <a href="https://github.com/vrzonegames" class="nav-cta">Github</a>
+  <a href="#pricing" class="nav-cta">Download</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <span class="toggle-bar"></span><span class="toggle-bar"></span>
   </button>
@@ -38,9 +40,11 @@
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-inner">
     <div class="mobile-menu-links">
-      <a href="#" class="mobile-menu-link" data-index="01">Home</a>
+      <a href="index.html" class="mobile-menu-link" data-index="01">Home</a>
       <a href="#features" class="mobile-menu-link" data-index="02">About</a>
-      <a href="Projects.html" class="mobile-menu-link" data-index="03">Projects</a>
+      <a href="#pricing" class="mobile-menu-link" data-index="03">Downloads</a>
+      <a href="https://github.com/vrzonegames/BioGEn" class="mobile-menu-link" data-index="04">Github</a>
+      <a href="Projects.html" class="mobile-menu-link" data-index="05">Projects</a>
     </div>
     <div class="mobile-menu-footer">
       <a href="#">Privacy</a>
@@ -56,12 +60,14 @@
   <div class="side-track"><div class="side-track-fill" id="leftTrack"></div></div>
   <div class="side-dot active"></div>
   <div class="side-dot"></div>
+  <div class="side-dot"></div>
   <div class="side-readout" id="scrollPct">00</div>
 </nav>
 
 <nav class="side-panel right" aria-label="Status indicators">
   <span class="side-label">Status</span>
   <div class="side-track"><div class="side-track-fill" id="rightTrack"></div></div>
+  <div class="side-dot"></div>
   <div class="side-dot"></div>
   <div class="side-dot active"></div>
   <div class="side-readout">LMN</div>
@@ -72,15 +78,19 @@
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="hero">
     <div class="hero-grid"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Now in Private Alpha</span>
+    </div>
     
-    <img src="images/VrzoneGmaes.png" width="375" height="270">
+    <img src="images/BioGEn.png" width="743" height="266">
     
     <p class="hero-sub">
-      vrzoneGames Is A Game Dev Studio That Me And My Small Team Of Devs Made.
+      BioGEn Is A Game About BioTech, Story, And More.
     </p>
     <div class="hero-ctas">
-      <a href="Projects.html" class="btn-primary">Projects</a>
-      <a href="https://github.com/vrzonegames" class="btn-secondary">Github</a>
+      <a href="#pricing" class="btn-primary">Download</a>
+      <a href="https://github.com/vrzonegames/BioGEn" class="btn-secondary">Github</a>
     </div>
 
   </section>
@@ -90,11 +100,13 @@
     <div class="logo-ticker-label">About</div>
     <div class="ticker-track" id="tickerTrack">
       <span class="ticker-item">BioGEn</span><span class="ticker-dot"></span>
-      <span class="ticker-item">Vitamin Tools</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Story</span><span class="ticker-dot"></span>
+      <span class="ticker-item">BioTech</span><span class="ticker-dot"></span>
       <span class="ticker-item">More</span><span class="ticker-dot"></span>
       <!-- Duplicated for seamless loop -->
       <span class="ticker-item">BioGEn</span><span class="ticker-dot"></span>
-      <span class="ticker-item">Vitamin Tools</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Story</span><span class="ticker-dot"></span>
+      <span class="ticker-item">BioTech</span><span class="ticker-dot"></span>
       <span class="ticker-item">More</span><span class="ticker-dot"></span>
     </div>
   </div>
@@ -102,14 +114,26 @@
   <!-- ═══ FEATURES ═══ -->
   <section class="section" id="features">
 
-    
+    <div class="feature reveal">
+      <div class="feature-visual">
+        <img src="images/Background.png" alt="What Its About">
+      </div>
+      <div class="feature-content">
+        <div class="feature-number">01</div>
+        <p class="section-tag">What Its About</p>
+        <h2 class="section-title">What The <strong>Game Is About</strong></h2>
+        <p class="section-body">
+          This Game Is By Me And MY Small Team Of Devs And It Has BioTech, A Story, And More.
+        </p>
+      </div>
+    </div>
 
     <div class="feature reverse reveal">
       <div class="feature-visual">
         <img src="images/VrzoneGames Banner.png" alt="Who">
       </div>
       <div class="feature-content">
-        <div class="feature-number">01</div>
+        <div class="feature-number">02</div>
         <p class="section-tag">Who</p>
         <h2 class="section-title">The <strong>Team</strong></h2>
         <p class="faq-question">
@@ -125,6 +149,45 @@
         </p>
       </div>
     </div>
+
+    
+    
+
+  </section>
+
+  <div class="silk-divider reveal"></div>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="section section-center" id="pricing">
+    <p class="section-tag reveal">Downloads</p>
+    <h2 class="section-title reveal reveal-d1">Choose The Method That <strong>Works For You</strong></h2>
+    
+
+    
+
+    <div class="pricing-grid">
+      <div class="pricing-card reveal reveal-1">
+        <div class="pricing-badge">Popular</div>
+        <div class="pricing-tier">Github</div>
+        
+        <p class="pricing-desc">Get The Installer From The Github Page</p>
+        <a href="https://github.com/vrzonegames/BioGEn/releases/latest" class="btn-secondary">Download</a>
+      </div>
+
+      <div class="pricing-card featured reveal reveal-d2">
+        <div class="pricing-badge">Popular</div>
+        <div class="pricing-tier">From Here</div>
+        <div class="pricing-prices">
+          
+        
+        </div>
+        <p class="pricing-desc">Get The Installer From Here</p>
+        
+        <a href="https://github.com/vrzonegames/BioGEn/releases/latest/download/BioGen-Setup.exe" class="btn-primary">Download</a>
+      </div>
+
+      
+    </div>
   </section>
 
   <div class="silk-divider reveal"></div>
@@ -138,17 +201,16 @@
   </section>
 
   <div class="silk-divider reveal"></div>
-
 
   
 
   <!-- ═══ FOOTER CTA ═══ -->
   <section class="footer-cta" id="cta">
     <p class="section-tag reveal">Ready to Start</p>
-    <h2 class="section-title reveal reveal-d1">Find Projects <br><strong>Here</strong></h2>
+    <h2 class="section-title reveal reveal-d1">Download<br><strong>Here</strong></h2>
     <div class="footer-ctas reveal reveal-d3">
-      <a href="Projects.html" class="btn-primary">Projects</a>
-      <a href="https://github.com/vrzonegames" class="btn-secondary">Github</a>
+      <a href="#pricing" class="btn-primary">Download</a>
+      <a href="https://github.com/vrzonegames/BioGEn" class="btn-secondary">Github</a>
     </div>
 
     <div class="footer-bar reveal reveal-d4" style="margin-top: 80px;">
